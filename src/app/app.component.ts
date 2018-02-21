@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
-import 'rxjs/add/operator/mergeMap';
+
 import { filter } from 'rxjs/operators/filter';
 import { map } from 'rxjs/operators/map';
 import { mergeMap } from 'rxjs/operators/mergeMap';
@@ -15,13 +16,24 @@ import { CmsService } from './shared/services/cms/cms.service';
 export class AppComponent {
   title = 'app';
 
-  constructor(private activatedRoute: ActivatedRoute, private cms: CmsService, private router: Router) {
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private cms: CmsService,
+    @Inject(PLATFORM_ID) private platformId: any,
+    private router: Router
+  ) {
     this.watchPosts();
+    this.scrollTopOnRouteChange();
+  }
+
+  private get routeChangeEvent() {
+    return this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd)
+    );
   }
 
   private get routeParams() {
-    return this.router.events.pipe(
-      filter((event) => event instanceof NavigationEnd),
+    return this.routeChangeEvent.pipe(
       map(() => this.activatedRoute),
       map((route) => {
         while (route.firstChild) route = route.firstChild;
@@ -35,9 +47,12 @@ export class AppComponent {
   private watchPosts() {
     this.routeParams.pipe(
       filter(params => params.hasOwnProperty('postId'))
-    ).subscribe(params => {
-      this.cms.fetchPost(params.postId)
-      console.log(params);
-    });
+    ).subscribe(params => this.cms.fetchPost(params.postId));
+  }
+
+  private scrollTopOnRouteChange() {
+    if (isPlatformBrowser(this.platformId)) {
+      this.routeChangeEvent.subscribe(() => window.scrollTo(0, 0));
+    }
   }
 }

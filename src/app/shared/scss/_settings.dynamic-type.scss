@@ -1,0 +1,356 @@
+// https://developer.apple.com/ios/human-interface-guidelines/visual-design/typography/
+
+$dynamic-type-map: (
+    large-title: (
+        small: (
+            font-size: 32px,
+            font-weight: 400,
+            line-height: 39px,
+            tracking: 12,
+        ),
+        medium: (
+            font-size: 33px,
+            font-weight: 400,
+            line-height: 40px,
+            tracking: 11,
+        ),
+        large: (
+            font-size: 34px,
+            font-weight: 400,
+            line-height: 41px,
+            tracking: 11,
+        ),
+        xl: (
+            font-size: 36px,
+            font-weight: 400,
+            line-height: 43px,
+            tracking: 11,
+        ),
+        xxl: (
+            font-size: 38px,
+            font-weight: 400,
+            line-height: 46px,
+            tracking: 11,
+        ),
+    ),
+    title-1: (
+        small: (
+            font-size: 26px,
+            font-weight: 400,
+            line-height: 32px,
+            tracking: 14,
+        ),
+        medium: (
+            font-size: 27px,
+            font-weight: 400,
+            line-height: 33px,
+            tracking: 13,
+        ),
+        large: (
+            font-size: 28px,
+            font-weight: 400,
+            line-height: 34px,
+            tracking: 13,
+        ),
+        xl: (
+            font-size: 30px,
+            font-weight: 400,
+            line-height: 37px,
+            tracking: 12,
+        ),
+        xxl: (
+            font-size: 32px,
+            font-weight: 400,
+            line-height: 39px,
+            tracking: 12,
+        ),
+    ),
+    title-2: (
+        small: (
+            font-size: 20px,
+            font-weight: 400,
+            line-height: 25px,
+            tracking: 19,
+        ),
+        medium: (
+            font-size: 21px,
+            font-weight: 400,
+            line-height: 26px,
+            tracking: 17,
+        ),
+        large: (
+            font-size: 22px,
+            font-weight: 400,
+            line-height: 28px,
+            tracking: 16,
+        ),
+        xl: (
+            font-size: 24px,
+            font-weight: 400,
+            line-height: 30px,
+            tracking: 35,
+        ),
+        xxl: (
+            font-size: 26px,
+            font-weight: 400,
+            line-height: 32px,
+            tracking: 14
+        ),
+    ),
+    title-3: (
+        small: (
+            font-size: 18px,
+            font-weight: 400,
+            line-height: 23px,
+            tracking: -25,
+        ),
+        medium: (
+            font-size: 33px,
+            font-weight: 400,
+            line-height: 40px,
+            tracking: 11,
+        ),
+        large: (
+            font-size: 34px,
+            font-weight: 400,
+            line-height: 41px,
+            tracking: 11,
+        ),
+        xl: (
+            font-size: 36px,
+            font-weight: 400,
+            line-height: 43px,
+            tracking: 11,
+        ),
+        xxl: (
+            font-size: 38px,
+            font-weight: 400,
+            line-height: 46px,
+            tracking: 11,
+        ),
+    ),
+    headline: (
+        small: (
+            font-size: 15px,
+            font-weight: 600,
+            line-height: 20px,
+            tracking: -16,
+        ),
+        medium: (
+            font-size: 16px,
+            font-weight: 600,
+            line-height: 21px,
+            tracking: -20,
+        ),
+        large: (
+            font-size: 17px,
+            font-weight: 600,
+            line-height: 22px,
+            tracking: -24,
+        ),
+        xl: (
+            font-size: 19px,
+            font-weight: 600,
+            line-height: 24px,
+            tracking: -26,
+        ),
+        xxl: (
+            font-size: 21px,
+            font-weight: 600,
+            line-height: 26px,
+            tracking: 17,
+        ),
+    ),
+    body: (
+        small: (
+            font-size: 15px,
+            font-weight: 400,
+            line-height: 20px,
+            tracking: -16,
+        ),
+        medium: (
+            font-size: 16px,
+            font-weight: 400,
+            line-height: 21px,
+            tracking: -20,
+        ),
+        large: (
+            font-size: 17px,
+            font-weight: 400,
+            line-height: 22px,
+            tracking: -24,
+        ),
+        xl: (
+            font-size: 19px,
+            font-weight: 400,
+            line-height: 24px,
+            tracking: -26,
+        ),
+        xxl: (
+            font-size: 21px,
+            font-weight: 400,
+            line-height: 26px,
+            tracking: 17,
+        ),
+    ),
+    callout: (
+        small: (
+            font-size: 14px,
+            font-weight: 400,
+            line-height: 19px,
+            tracking: -11,
+        ),
+        medium: (
+            font-size: 33px,
+            font-weight: 400,
+            line-height: 40px,
+            tracking: 11,
+        ),
+        large: (
+            font-size: 34px,
+            font-weight: 400,
+            line-height: 41px,
+            tracking: 11,
+        ),
+        xl: (
+            font-size: 36px,
+            font-weight: 400,
+            line-height: 43px,
+            tracking: 11,
+        ),
+        xxl: (
+            font-size: 38px,
+            font-weight: 400,
+            line-height: 46px,
+            tracking: 11,
+        ),
+    ),
+    subhead: (
+        small: (
+            font-size: 13px,
+            font-weight: 400,
+            line-height: 18px,
+            tracking: -6,
+        ),
+        medium: (
+            font-size: 33px,
+            font-weight: 400,
+            line-height: 40px,
+            tracking: 11,
+        ),
+        large: (
+            font-size: 34px,
+            font-weight: 400,
+            line-height: 41px,
+            tracking: 11,
+        ),
+        xl: (
+            font-size: 36px,
+            font-weight: 400,
+            line-height: 43px,
+            tracking: 11,
+        ),
+        xxl: (
+            font-size: 38px,
+            font-weight: 400,
+            line-height: 46px,
+            tracking: 11,
+        ),
+    ),
+    footnote: (
+        small: (
+            font-size: 12px,
+            font-weight: 400,
+            line-height: 16px,
+            tracking: 0,
+        ),
+        medium: (
+            font-size: 33px,
+            font-weight: 400,
+            line-height: 40px,
+            tracking: 11,
+        ),
+        large: (
+            font-size: 34px,
+            font-weight: 400,
+            line-height: 41px,
+            tracking: 11,
+        ),
+        xl: (
+            font-size: 36px,
+            font-weight: 400,
+            line-height: 43px,
+            tracking: 11,
+        ),
+        xxl: (
+            font-size: 38px,
+            font-weight: 400,
+            line-height: 46px,
+            tracking: 11,
+        ),
+    ),
+    caption-1: (
+        small: (
+            font-size: 11px,
+            font-weight: 400,
+            line-height: 13px,
+            tracking: 6,
+        ),
+        medium: (
+            font-size: 33px,
+            font-weight: 400,
+            line-height: 40px,
+            tracking: 11,
+        ),
+        large: (
+            font-size: 34px,
+            font-weight: 400,
+            line-height: 41px,
+            tracking: 11,
+        ),
+        xl: (
+            font-size: 36px,
+            font-weight: 400,
+            line-height: 43px,
+            tracking: 11,
+        ),
+        xxl: (
+            font-size: 38px,
+            font-weight: 400,
+            line-height: 46px,
+            tracking: 11,
+        ),
+    ),
+    caption-2: (
+        small: (
+            font-size: 11px,
+            font-weight: 400,
+            line-height: 13px,
+            tracking: 6,
+        ),
+        medium: (
+            font-size: 33px,
+            font-weight: 400,
+            line-height: 40px,
+            tracking: 11,
+        ),
+        large: (
+            font-size: 34px,
+            font-weight: 400,
+            line-height: 41px,
+            tracking: 11,
+        ),
+        xl: (
+            font-size: 36px,
+            font-weight: 400,
+            line-height: 43px,
+            tracking: 11,
+        ),
+        xxl: (
+            font-size: 38px,
+            font-weight: 400,
+            line-height: 46px,
+            tracking: 11,
+        ),
+    ),
+);

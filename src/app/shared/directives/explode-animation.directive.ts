@@ -13,7 +13,7 @@ export class ExplodeAnimationDirective {
     ExplodeAnimationDirective.prototype.offsetY = 0;
     ExplodeAnimationDirective.prototype.aspectHeight = 100;
     ExplodeAnimationDirective.prototype.duration = 590;
-    ExplodeAnimationDirective.prototype.curve = 'cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+    ExplodeAnimationDirective.prototype.curve = 'cubic-bezier(.7,1.79,.85,1.21)';
   })();
 
   animationTimer: number;

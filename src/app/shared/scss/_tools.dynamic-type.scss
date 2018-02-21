@@ -1,0 +1,45 @@
+@import './settings.dynamic-type';
+@import '~sass-mq';
+@import './tools.tracking.scss';
+
+@mixin dynamic-type($style) {
+    $style-map: map-get($dynamic-type-map, $style);
+    $size-map: map-get($style-map, small);
+
+    font-size: map-get($size-map, font-size);
+    font-weight: map-get($size-map, font-weight);
+    line-height: map-get($size-map, line-height);
+    @include tracking(map-get($size-map, tracking));
+
+    @include mq($from: mobile) {
+        $size-map: map-get($style-map, medium);
+        font-size: map-get($size-map, font-size);
+        font-weight: map-get($size-map, font-weight);
+        line-height: map-get($size-map, line-height);
+        @include tracking(map-get($size-map, tracking));
+    }
+
+    @include mq($from: tablet) {
+        $size-map: map-get($style-map, large);
+        font-size: map-get($size-map, font-size);
+        font-weight: map-get($size-map, font-weight);
+        line-height: map-get($size-map, line-height);
+        @include tracking(map-get($size-map, tracking));
+    }
+
+    @include mq($from: desktop) {
+        $size-map: map-get($style-map, xl);
+        font-size: map-get($size-map, font-size);
+        font-weight: map-get($size-map, font-weight);
+        line-height: map-get($size-map, line-height);
+        @include tracking(map-get($size-map, tracking));
+    }
+
+    @include mq($from: wide) {
+        $size-map: map-get($style-map, xxl);
+        font-size: map-get($size-map, font-size);
+        font-weight: map-get($size-map, font-weight);
+        line-height: map-get($size-map, line-height);
+        @include tracking(map-get($size-map, tracking));
+    }
+}

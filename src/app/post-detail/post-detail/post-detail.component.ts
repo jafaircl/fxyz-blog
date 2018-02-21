@@ -10,7 +10,7 @@ import { ColorService } from '../../shared/services/color/color.service';
 })
 export class PostDetailComponent implements OnInit {
 
-  constructor(public cms: CmsService, public color: ColorService) { }
+  constructor(public cms: CmsService, private color: ColorService) { }
 
   ngOnInit() {
   }

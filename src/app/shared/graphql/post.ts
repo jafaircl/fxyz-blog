@@ -1,13 +1,19 @@
 import gql from 'graphql-tag';
 
 export const QueryAllPosts = gql`query {
-    allBlogPosts {
+    allBlogPosts (orderBy: postDateAndTime_DESC) {
         postColor1
         postColor2
         postDateAndTime
         postDescription
         postSlug
         postTitle
+        category {
+            categoryTitle
+        }
+        postImage {
+            url
+        }
     }
 }`;
 
@@ -20,5 +26,11 @@ export const QueryPostById = gql`query ($slug: String) {
         postDescription
         postSlug
         postTitle
+        category {
+            categoryTitle
+        }
+        postImage {
+            url
+        }
     }
 }`;

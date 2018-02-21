@@ -1,14 +1,29 @@
+@import './tools.tracking';
+@import './tools.dynamic-type';
+@import '~sass-mq';
+
 article {
-
     header {
-        h1, h2 {
+        padding: 24px 16px;
 
+        h1, h2 {
+            @include dynamic-type(headline);
+            font-weight: 800;
         }
         p {
-
+            margin-top: 0;
+        }
+        img {
+            display: block;
+            padding: 36px;
+            margin-left: auto;
+            margin-right: auto;
+            width: 33%;
         }
     }
     main {
-
+        margin: 48px auto;
+        max-width: 720px;
+        @include dynamic-type(body);
     }
 }

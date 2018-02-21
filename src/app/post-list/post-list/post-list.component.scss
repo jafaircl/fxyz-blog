@@ -3,6 +3,8 @@
 
 :host {
     ul {
+        // max-width: 700px;
+        padding: 0;
         list-style: none;
         display: flex;
         flex-direction: row;
@@ -10,9 +12,17 @@
 
         li {
             width: 100%;
+            padding: 12px;
 
             @include mq($from: tablet) {
-                width: 50%;
+                width: calc(50% - 24px);
+            }
+
+            article {
+
+                header {
+                    border-radius: 8px;
+                }
             }
         }
     }

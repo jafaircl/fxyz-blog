@@ -1,1 +1,25 @@
-/* You can add global styles to this file, and also import other style files */
+// Settings
+@import 'app/shared/scss/settings.fonts';
+
+// Tools
+
+// Generic
+@import '~normalize.css/normalize.css';
+@import 'app/shared/scss/generic.typography';
+
+// Elements
+
+// Objects
+
+// Components
+
+// Utilities
+
+
+pre, code, pre[class*="language-"] > code[class*="language-"] {
+    font-family: $monospace-font-stack;
+}
+pre, code {
+
+    color: #0070c9;
+}

@@ -1,3 +1,6 @@
+import { Category } from "./category";
+import { Asset } from "./asset";
+
 export interface Post {
     postColor1?: string;
     postColor2?: string;
@@ -6,4 +9,6 @@ export interface Post {
     postDescription?: string;
     postSlug?: string;
     postTitle?: string;
+    category?: Category;
+    postImage?: Asset;
 }
