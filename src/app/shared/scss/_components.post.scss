@@ -9,13 +9,13 @@ article {
         padding: 24px 16px;
 
         h1, h2 {
-            z-index: 1;
+            // z-index: 1;
             font-weight: 800 !important;
             padding-bottom: 24px;
             @include dynamic-type(large-title);
         }
         p {
-            z-index: 1;
+            // z-index: 1;
             margin-top: 0;
         }
         img {
@@ -38,7 +38,9 @@ article {
         @include dynamic-type(body);
 
         markdown {
-            padding: 24px 12px;
+            p {
+                
+            }
         }
     }
 }
