@@ -1,0 +1,19 @@
+@import '~sass-mq';
+@import '../../shared/scss/components.post';
+
+:host {
+    ul {
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        li {
+            width: 100%;
+
+            @include mq($from: tablet) {
+                width: 50%;
+            }
+        }
+    }
+}

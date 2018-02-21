@@ -1,0 +1,17 @@
+<ul>
+  <li *ngFor="let post of cms.postList | async">
+    <article explodeAnimation
+             destination="/blog/{{ post.postSlug }}"
+             (click)="cms.setPost(post)">
+      <header [ngStyle]="{ backgroundImage: 'linear-gradient(45deg, ' + post.postColor1 + ', ' + post.postColor2 + ')', color: setPostColor(post)}">
+        <h1>
+          <a href="/blog/{{ post.postSlug }}">{{ post.postTitle }}</a>
+        </h1>
+        <p>{{ post.postDescription }}</p>
+      </header>
+      <main>
+        <markdown>{{ post.postContent }}</markdown>
+      </main>
+    </article>
+  </li>
+</ul>

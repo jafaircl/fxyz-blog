@@ -1,0 +1,9 @@
+<article *ngIf="cms.post | async; let post">
+  <header [ngStyle]="{ backgroundImage: 'linear-gradient(45deg, ' + post.postColor1 + ', ' + post.postColor2 + ')', color: setPostColor(post)}">
+    <h1>{{ post.postTitle }}</h1>
+    <p>{{ post.postDescription }}</p>
+  </header>
+  <main *ngIf="post.postContent">
+    <markdown>{{ post.postContent }}</markdown>
+  </main>
+</article>
