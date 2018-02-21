@@ -4,26 +4,41 @@
 
 article {
     header {
+        position: relative;
+        z-index: 0;
         padding: 24px 16px;
 
         h1, h2 {
-            @include dynamic-type(large-title);
+            z-index: 1;
             font-weight: 800 !important;
+            padding-bottom: 24px;
+            @include dynamic-type(large-title);
         }
         p {
+            z-index: 1;
             margin-top: 0;
         }
         img {
-            display: block;
+            /*display: block;
             padding: 36px;
             margin-left: auto;
             margin-right: auto;
-            width: 33%;
+            width: 33%;*/
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            height: 50%;
+            opacity: 0.99;
         }
     }
     main {
-        margin: 48px auto;
+        margin: 0 auto;
         max-width: 720px;
         @include dynamic-type(body);
+
+        markdown {
+            padding: 24px 12px;
+        }
     }
 }

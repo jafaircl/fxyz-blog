@@ -4,11 +4,11 @@
              destination="/blog/{{ post.postSlug }}"
              (click)="cms.setPost(post)">
       <header [ngStyle]="{ backgroundImage: 'linear-gradient(45deg, ' + post.postColor1 + ', ' + post.postColor2 + ')', color: setPostColor(post)}">
+        <img src="{{ post.postImage.url }}">
         <p>{{ post.category.categoryTitle }}</p>
         <h1>
           <a href="/blog/{{ post.postSlug }}">{{ post.postTitle }}</a>
         </h1>
-        <img src="{{ post.postImage.url }}">
         <p>{{ post.postDescription }}</p>
       </header>
       <main>
