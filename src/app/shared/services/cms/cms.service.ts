@@ -12,6 +12,7 @@ import { QueryPostById, QueryAllPosts } from '../../graphql/post';
 import { Post } from '../../interfaces/post';
 import { PostQuery } from '../../interfaces/post-query';
 import { PostListQuery } from '../../interfaces/post-list-query';
+import { SeoService } from '../seo/seo.service';
 
 @Injectable()
 export class CmsService {
@@ -24,7 +25,8 @@ export class CmsService {
   public post$: ReplaySubject<Post>;
   public postList$: ReplaySubject<Post[]>;
 
-  constructor(private apollo: Apollo) { }
+  constructor(private apollo: Apollo) {
+  }
 
   private fetch<T>(query: QueryRef<T>, variables = {}): Observable<ApolloQueryResult<T>> {
     return this.apollo.watchQuery<T>({ query, variables }).valueChanges;

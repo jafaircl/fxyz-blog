@@ -7,6 +7,7 @@ import { map } from 'rxjs/operators/map';
 import { mergeMap } from 'rxjs/operators/mergeMap';
 
 import { CmsService } from './shared/services/cms/cms.service';
+import { SeoService } from './shared/services/seo/seo.service';
 // import { TextBalancerService } from './shared/services/text-balancer/text-balancer.service';
 
 @Component({
@@ -27,11 +28,12 @@ export class AppComponent {
     private cms: CmsService,
     // private element: ElementRef,
     @Inject(PLATFORM_ID) private platformId: any,
-    private router: Router
+    private router: Router,
+    private seo: SeoService
   ) {
     this.watchPosts();
     this.scrollTopOnRouteChange();
-    // this.balanceText();
+    this.setMeta();
   }
 
   private get routeChangeEvent() {
@@ -62,6 +64,22 @@ export class AppComponent {
     if (isPlatformBrowser(this.platformId)) {
       this.routeChangeEvent.subscribe(() => window.scrollTo(0, 0));
     }
+  }
+
+  private setMeta() {
+    this.cms.post.subscribe(post => {
+      this.seo.setTags({
+        title: `${post.postTitle} | Faircloth.xyz`,
+        description: post.postDescription,
+        image: post.postImage.url
+      });
+    });
+    this.cms.postList.subscribe(() => {
+      this.seo.setTags({
+        title: 'Blog | Faircloth.xyz',
+        description: 'PPC, Web Development and Angular Posts'
+      });
+    });
   }
 
   /*private balanceText(): void {

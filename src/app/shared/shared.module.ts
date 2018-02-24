@@ -12,6 +12,7 @@ import { markedOptionsFactory } from './factories/marked-options.factory';
 import { ExplodeAnimationDirective } from './directives/explode-animation.directive';
 import { CmsService } from './services/cms/cms.service';
 import { ColorService } from './services/color/color.service';
+import { SeoService } from './services/seo/seo.service';
 // import { TextBalancerService } from './services/text-balancer/text-balancer.service';
 
 @NgModule({
@@ -46,6 +47,7 @@ export class SharedModule {
       providers: [
         CmsService,
         ColorService,
+        SeoService
         // TextBalancerService
       ],
     };
