@@ -13,7 +13,7 @@ export class ExplodeAnimationDirective {
     ExplodeAnimationDirective.prototype.offsetY = 0;
     ExplodeAnimationDirective.prototype.aspectHeight = 100;
     ExplodeAnimationDirective.prototype.duration = 590;
-    ExplodeAnimationDirective.prototype.curve = 'cubic-bezier(.7,1.79,.85,1.21)';
+    ExplodeAnimationDirective.prototype.curve = 'cubic-bezier(0.175, 0.885, 0.32, 1.275)';
   })();
 
   animationTimer: number;
@@ -35,6 +35,7 @@ export class ExplodeAnimationDirective {
               private element: ElementRef) { }
 
   animateRouteChange($event): void {
+    // console.log($event);
     // stop href from actually navigating before we can animate
     $event.preventDefault();
     $event.stopPropagation();
@@ -45,12 +46,13 @@ export class ExplodeAnimationDirective {
     // build animation & play it
     const animation = this.buildAnimation(target, props);
     animation.play();
+    this.createInsertAndAnimateBottomSheet();
     animation.onDone(() => {
       this.router.navigateByUrl(this.destination)
     });
   }
 
-  createAndInsertPlaceholder(target, props) {
+  createAndInsertPlaceholder(target: Element, props) {
     const parentNode = this.renderer.parentNode(target);
     const placeholder = this.renderer.createElement(target.tagName);
     const targetStyle = `background-image: none !important;
@@ -63,7 +65,11 @@ export class ExplodeAnimationDirective {
     this.renderer.insertBefore(parentNode, placeholder, target);
   }
 
-  fixTargetPositionAndStyle(target, props) {
+  createInsertAndAnimateBottomSheet() {
+    this.renderer.addClass(document.getElementById('bottomSheet'), 'active');
+  }
+
+  fixTargetPositionAndStyle(target: Element, props) {
     const _style = {
       position: 'fixed',
       zIndex: 1,
@@ -78,9 +84,7 @@ export class ExplodeAnimationDirective {
     }
   }
 
-  buildAnimation(target, props): AnimationPlayer {
-    console.log(props);
-    console.log(window.innerWidth);
+  buildAnimation(target: Element, props): AnimationPlayer {
     const animation = this.animationBuilder.build([
       style({
         transform: `translate3d(0,0,0)`,
