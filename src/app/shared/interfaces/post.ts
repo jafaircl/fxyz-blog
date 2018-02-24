@@ -11,4 +11,5 @@ export interface Post {
     postTitle?: string;
     category?: Category;
     postImage?: Asset;
+    openGraphImage?: Asset;
 }

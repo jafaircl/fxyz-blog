@@ -29,6 +29,9 @@ export const QueryPostById = gql`query ($slug: String) {
         category {
             categoryTitle
         }
+        openGraphImage {
+            url
+        }
         postImage {
             url
         }

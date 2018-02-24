@@ -71,7 +71,7 @@ export class AppComponent {
       this.seo.setTags({
         title: `${post.postTitle} | Faircloth.xyz`,
         description: post.postDescription,
-        image: post.postImage.url
+        image: post.openGraphImage.url
       });
     });
     this.cms.postList.subscribe(() => {
