@@ -77,7 +77,8 @@ export class AppComponent {
     this.cms.postList.subscribe(() => {
       this.seo.setTags({
         title: 'Blog | Faircloth.xyz',
-        description: 'PPC, Web Development and Angular Posts'
+        description: 'PPC, Web Development and Angular Posts', 
+        image: 'https://media.graphcms.com/cIqf3SyNQ6qFtKnFEBJp'
       });
     });
   }
