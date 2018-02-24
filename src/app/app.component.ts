@@ -1,4 +1,4 @@
-import { Component, Inject, PLATFORM_ID } from '@angular/core';
+import { Component, Inject, PLATFORM_ID, HostListener, ElementRef } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 
@@ -7,6 +7,7 @@ import { map } from 'rxjs/operators/map';
 import { mergeMap } from 'rxjs/operators/mergeMap';
 
 import { CmsService } from './shared/services/cms/cms.service';
+// import { TextBalancerService } from './shared/services/text-balancer/text-balancer.service';
 
 @Component({
   selector: 'app-root',
@@ -14,16 +15,23 @@ import { CmsService } from './shared/services/cms/cms.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'app';
+
+  /*@HostListener('window:resize', ['$event'])
+  onResize() {
+    this.balanceText();
+  }*/
 
   constructor(
     private activatedRoute: ActivatedRoute,
+    // private balancer: TextBalancerService,
     private cms: CmsService,
+    // private element: ElementRef,
     @Inject(PLATFORM_ID) private platformId: any,
     private router: Router
   ) {
     this.watchPosts();
     this.scrollTopOnRouteChange();
+    // this.balanceText();
   }
 
   private get routeChangeEvent() {
@@ -55,4 +63,12 @@ export class AppComponent {
       this.routeChangeEvent.subscribe(() => window.scrollTo(0, 0));
     }
   }
+
+  /*private balanceText(): void {
+    this.routeChangeEvent.subscribe(() => {
+      this.element.nativeElement.querySelectorAll('.balance-text').forEach(element => {
+        setTimeout(() => this.balancer.balanceText(element));
+      });
+    });
+  }*/
 }
