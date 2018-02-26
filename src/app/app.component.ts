@@ -74,13 +74,6 @@ export class AppComponent {
         image: post.openGraphImage.url
       });
     });
-    this.cms.postList.subscribe(() => {
-      this.seo.setTags({
-        title: 'Blog | Faircloth.xyz',
-        description: 'PPC, Web Development and Angular Posts', 
-        image: 'https://media.graphcms.com/cIqf3SyNQ6qFtKnFEBJp'
-      });
-    });
   }
 
   /*private balanceText(): void {
