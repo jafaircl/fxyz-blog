@@ -10,6 +10,7 @@
           <a href="/blog/{{ post.postSlug }}">{{ post.postTitle }}</a>
         </h1>
         <p>{{ post.postDescription }}</p>
+        <time>{{ post.postDateAndTime | timeAgo }}</time>
       </header>
       <main>
         <markdown>{{ post.postContent }}</markdown>

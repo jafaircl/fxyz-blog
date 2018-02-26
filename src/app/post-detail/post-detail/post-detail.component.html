@@ -4,6 +4,7 @@
     <h1 class="balance-text">{{ post.postTitle }}</h1>
     <img src="{{ post.postImage.url }}">
     <p>{{ post.postDescription }}</p>
+    <time>{{ post.postDateAndTime | timeAgo }}</time>
   </header>
   <main *ngIf="post.postContent">
     <markdown>{{ post.postContent }}</markdown>

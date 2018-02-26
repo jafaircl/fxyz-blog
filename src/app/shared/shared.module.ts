@@ -13,6 +13,7 @@ import { ExplodeAnimationDirective } from './directives/explode-animation.direct
 import { CmsService } from './services/cms/cms.service';
 import { ColorService } from './services/color/color.service';
 import { SeoService } from './services/seo/seo.service';
+import { TimeAgoPipe } from './pipes/time-ago/time-ago.pipe';
 // import { TextBalancerService } from './services/text-balancer/text-balancer.service';
 
 @NgModule({
@@ -28,9 +29,10 @@ import { SeoService } from './services/seo/seo.service';
   ],
   exports: [
     MarkdownModule,
-    ExplodeAnimationDirective
+    ExplodeAnimationDirective,
+    TimeAgoPipe
   ],
-  declarations: [ExplodeAnimationDirective]
+  declarations: [ExplodeAnimationDirective, TimeAgoPipe]
 })
 export class SharedModule {
 
