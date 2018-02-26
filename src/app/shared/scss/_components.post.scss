@@ -1,3 +1,4 @@
+@import './settings.fonts';
 @import './tools.tracking';
 @import './tools.dynamic-type';
 @import '~sass-mq';
@@ -8,6 +9,10 @@ article {
         z-index: 0;
         padding: 24px 16px;
 
+        .category {
+            font-family: $monospace-font-stack;
+        }
+
         h1, h2 {
             // z-index: 1;
             font-weight: 800 !important;
@@ -17,6 +22,7 @@ article {
         p {
             // z-index: 1;
             margin-top: 0;
+            // font-family: $serif-font-stack;
         }
         img {
             /*display: block;
@@ -31,16 +37,15 @@ article {
             height: 50%;
             opacity: 0.99;
         }
+        time {
+            font-family: $monospace-font-stack;
+        }
     }
     main {
         margin: 0 auto;
         max-width: 720px;
-        @include dynamic-type(body);
+        // font-family: $serif-font-stack;
 
-        markdown {
-            p {
-                
-            }
-        }
+        @include dynamic-type(body);
     }
 }

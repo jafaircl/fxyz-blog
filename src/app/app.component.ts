@@ -67,6 +67,13 @@ export class AppComponent {
   }
 
   private setMeta() {
+    /*this.cms.postList.subscribe(() => {
+      this.seo.setTags({
+        title: 'Blog | Faircloth.xyz',
+        description: 'PPC, Web Development and Angular Posts', 
+        image: 'https://media.graphcms.com/cIqf3SyNQ6qFtKnFEBJp'
+      });
+    });*/
     this.cms.post.subscribe(post => {
       this.seo.setTags({
         title: `${post.postTitle} | Faircloth.xyz`,
