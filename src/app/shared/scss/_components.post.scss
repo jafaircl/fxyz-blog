@@ -11,6 +11,7 @@ article {
 
         .category {
             font-family: $monospace-font-stack;
+            font-weight: 400 !important;
         }
 
         h1, h2 {
@@ -23,6 +24,7 @@ article {
             // z-index: 1;
             margin-top: 0;
             // font-family: $serif-font-stack;
+            @include dynamic-type(headline);
         }
         img {
             /*display: block;

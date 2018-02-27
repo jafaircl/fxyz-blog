@@ -12,10 +12,10 @@
 
         li {
             width: 100%;
-            padding: 12px;
+            padding: 18px;
 
             @include mq($from: tablet) {
-                width: calc(50% - 24px);
+                width: calc(50% - 36px);
             }
 
             article {
